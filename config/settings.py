@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-mt=$aofs!p_hbp$b6=0o-alaq*3hb)jop@+av0k6lqw1)%j(qc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["b22exam.pythonanywhere.com"]
 
 # Application definition
 
@@ -151,3 +150,12 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MAILERS = {
+    "default": {
+        "BACKEND": "django.core.mail.backends.console.EmailBackend",
+    }
+}

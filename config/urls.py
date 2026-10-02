@@ -24,7 +24,13 @@ from django.conf.urls.static import static
 
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-
+from apartments.views import (
+    ApartmentViewSet,
+    CategoryViewSet,
+    RegisterView,
+    BookingViewSet,
+    ReviewViewSet,
+)   
 from apartments.views import ApartmentViewSet, CategoryViewSet
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -53,7 +59,8 @@ router = DefaultRouter()
 
 router.register("apartments", ApartmentViewSet)
 router.register("categories", CategoryViewSet)
-
+router.register("bookings", BookingViewSet, basename="booking")
+router.register("reviews", ReviewViewSet, basename="review")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
